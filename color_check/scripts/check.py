@@ -19,12 +19,14 @@ with open('scripts/colornames.csv', mode="r") as csv_file:
 		print("""
 			<html>
 			<body>
-			<p>
+			<p style="font:Verdana; font-size:20px; margin-top: 30px; margin-left:30px;"><strong>
 				%s is a real color and its's hex is: %s
-			</p>
+			</strong></p>
+			<div style="background-color:%s; width:300px; height:50px; float:left; margin-left:30px;">
+			</div>
 			</body>
 			</html>
-			""" % (color_input, hexx))
+			""" % (color_input, hexx, hexx))
 	else: 
 		print("""
 			<html>
