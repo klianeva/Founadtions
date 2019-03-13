@@ -11,7 +11,7 @@ with open('scripts/colornames.csv', mode="r") as csv_file:
 	csv_reader = csv.DictReader(csv_file)
 	exist = False
 	for row in csv_reader:
-		if color_input == row["name"]: 
+		if color_input == row["name"] or color_input == row["hex"]: 
 			exist = True
 
 	if exist == True:
