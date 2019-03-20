@@ -16,7 +16,7 @@ db_connection = sqlite3.connect('scripts/restaurants.db')
 db_cursor = db_connection.cursor()
 
 # run a first query 
-db_cursor.execute("""SELECT restaurants.NAME
+db_cursor.execute("""SELECT restaurants.NAME, neighborhoods.NAME 
                         FROM restaurants INNER JOIN neighborhoods 
                         ON restaurants.NEIGHBORHOOD_ID = neighborhoods.ID
                         WHERE neighborhoods.NAME='Kreuzberg'""")
@@ -27,16 +27,15 @@ db_cursor.execute("""SELECT restaurants.NAME
 list_restaurants = db_cursor.fetchall()
 
 def smth(list_restaurants):
-	for index, l in enumerate(list_restaurants):
+	for l in list_restaurants:
 		print("""
 			<html>
 			<body>
 			<p><strong>
-				{}.   {}
+				- {} 
 			</strong></p>
 			</body>
 			</html>
-			""".format((str(index+1)),', '.join(l)))
+			""".format(', '.join(l)))
 smth(list_restaurants)
 db_connection.close()
- 
