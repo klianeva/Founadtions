@@ -36,6 +36,6 @@ def smth(list_restaurants):
 			</strong></p>
 			</body>
 			</html>
-			""".format(l))
+			""".format(', '.join(l)))
 smth(list_restaurants)
 db_connection.close()
