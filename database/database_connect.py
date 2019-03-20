@@ -11,7 +11,10 @@ db_connection = sqlite3.connect('restaurants.db')
 db_cursor = db_connection.cursor()
 
 # run a first query 
-db_cursor.execute("SELECT restaurants.NAME, neighborhoods.NAME from restaurants INNER JOIN neighborhoods on neighborhoods.ID = restaurants.ID ")
+db_cursor.execute("""SELECT restaurants.NAME, neighborhoods.NAME 
+                        FROM restaurants INNER JOIN neighborhoods 
+                        ON restaurants.NEIGHBORHOOD_ID = neighborhoods.ID
+                        WHERE neighborhoods.NAME='Kreuzberg' """)
 
 # store the result in a local variable. 
 # this will be a list of tuples, where each tuple represents a row in the table
