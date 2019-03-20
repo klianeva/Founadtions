@@ -5,6 +5,9 @@
 
 # import the python library for SQLite 
 import sqlite3
+import cgi
+
+form = cgi.FieldStorage()
 
 # connect to the database file, and create a connection object
 db_connection = sqlite3.connect('scripts/restaurants.db')
@@ -29,7 +32,7 @@ def smth(list_restaurants):
 			<html>
 			<body>
 			<p><strong>
-				- {} : 
+				- {} 
 			</strong></p>
 			</body>
 			</html>

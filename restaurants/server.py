@@ -1,12 +1,10 @@
 import http.server
 import socketserver
-
 import scripts.database_connect 
 
 # A simple script to use the python CGI server in python3
 # Using CGIHTTPRequestHandler in place of SimpleHTTPRequestHandler
 # allows python scripts to be called as an action (POST)
-
 # define the handler to be the CGI server
 handler = http.server.CGIHTTPRequestHandler
 
