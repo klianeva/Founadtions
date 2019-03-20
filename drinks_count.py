@@ -1,3 +1,4 @@
+
 ### Challenge: How many drinks do you need to buy to throw a great party? 
 # you will have a list of your friends, and their favorite drink. 
 # you will also know how many drinks of a certain type are drunk per hour
@@ -53,4 +54,6 @@ b*=6
 w*=6
 l*=6
 n*=6
+print ("You need to buy for the party: {} cocktails, {} beers, {} wines, {} liquors, {} nonalcoholoc drinks!".format(c,b,w,l,n))
+
 print ("You need to buy for the party: {} cocktails, {} beers, {} wines, {} liquors, {} nonalcoholoc drinks!".format(c,b,w,l,n))
