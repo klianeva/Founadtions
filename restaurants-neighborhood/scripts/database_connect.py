@@ -8,6 +8,9 @@ import sqlite3
 import cgi
 
 form = cgi.FieldStorage()
+kreuzberg_input = form.getvalue('kreuzberg')
+prenzlauer_input = form.getvalue('prenzlauer_berg')
+
 
 # connect to the database file, and create a connection object
 db_connection = sqlite3.connect('scripts/restaurants.db')
