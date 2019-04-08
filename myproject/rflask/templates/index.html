@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Women in History</title>
+</head>
+<body background="background.png">
+<div class="form-group">
+	<select name="form">
+		<option selected="selected" value="">I want to read her story</option>
+	{% for story in stories %}
+	    <option value="{{story.id}}">{{story.name}}</option>
+	{% endfor %} 
+	</select>
+	</div>
+	<input type="submit" name="search" value="search">
+</body>
+</html>
