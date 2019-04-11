@@ -1,4 +1,4 @@
-Project Title
+WORTH_MENTIONING.COM
 
 My project is about showcasing women who the majoirty of the Western societies have ignored in their history books.
 
@@ -10,7 +10,10 @@ Prerequisites
 
 What things you need to install the software and how to install them
 
-Give examples
+- You need to have a virtual enviorment running on your machine.
+- You will need to install python3 & flask 
+- You may need to install pip and virtualenv as well
+- 
 Installing
 
 A step by step series of examples that tell you how to get a development env running
@@ -43,25 +46,17 @@ Add additional notes about how to deploy this on a live system
 
 Built With
 
-Dropwizard - The web framework used
-Maven - Dependency Management
-ROME - Used to generate RSS Feeds
-Contributing
+Flask - The web framework used
+SQLite - Database
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-Versioning
-
-We use SemVer for versioning. For the versions available, see the tags on this repository.
 
 Authors
 
-Billie Thompson - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
+Viktoria Klianeva
 
 License
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
+
 
 Acknowledgments
 
