@@ -6,7 +6,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return render_template("index.html")
+    con = sql.connect("stories.db")
+    cur = con.cursor()
+    #Show the First and the Last name of the women in a dropdown.
+    women = cur.execute("""SELECT FirstName, LastName FROM Women""") 
+    return render_template("index.html", women=women)
 
 
 @app.route('/enternew')

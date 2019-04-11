@@ -1,10 +1,10 @@
-import sqlite3
+import sqlite3 as sql
 
 import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 
-conn = sqlite3.connect('stories.db')
+con = sql.connect('stories.db')
 print "Opened database successfully";
 
-conn.close()
+con.close()
