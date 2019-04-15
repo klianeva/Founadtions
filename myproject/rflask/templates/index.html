@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Women in History</title>
-	<link rel="stylesheet" href="{{ url_for('static', filename='styling.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	
 </head>
 <body>
-<div class="form-group">
-	<select name="form">
+	<h2>The women who changed the world <br/> without you noticing</h2>
+	
+	<div class="dropdown-wrapper">
+	<select name="form" class="dropdown">
 		<option selected="selected" value="">I want to read her story</option>
 	{% for woman in women %}
-	    <option value="{{WomenID}}">{{woman}}</option>
+	    <option value="{{WomenID}}" class="list">{{woman}}</option>
 	{% endfor %} 
 	</select>
-	</div>
 	<input type="submit" name="search" value="search">
+	</div>
 </body>
 </html>

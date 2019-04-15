@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, session, request
 import sqlite3 as sql
-import json
+
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def hello():
 
     cur = con.cursor()
     #Show the First and the Last name of the women in a dropdown.
-    women = cur.execute("""SELECT FirstName, LastName FROM Women""").fetchall() 
+    women = cur.execute("""SELECT FirstName, LastName FROM Women""")
     return render_template("index.html", women=women)
 
 
