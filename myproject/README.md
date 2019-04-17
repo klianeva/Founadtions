@@ -1,4 +1,4 @@
-WORTH_MENTIONING.COM
+WORTH-MENTIONING.COM
 
 My project is about showcasing women who the majoirty of the Western societies have ignored in their history books.
 
