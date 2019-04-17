@@ -22,14 +22,15 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
         women_list = woman.split(',')
 
         last_name = women_list[1]
+        first_name = women_list[0]
 
         last_name = last_name.replace(')', '')
-
+        first_name =first_name.replace('(', '') 
     
         #Define which story should be found in the strories_temp template.
     con = sql.connect("stories.db")
     cur = con.cursor()
-    story = cur.execute("""SELECT Story FROM Women WHERE LastName = {} """.format(last_name)) 
+    story = cur.execute("""SELECT Story FROM Women WHERE (LastName = {}) AND (FirstName = {}) """.format(last_name, first_name)) 
     
     story_again = None
     for s in story:
