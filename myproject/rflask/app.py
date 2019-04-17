@@ -1,18 +1,41 @@
 import os
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, redirect
 import sqlite3 as sql
 
 
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def hello(): #landing page
     con = sql.connect("stories.db")
 
     cur = con.cursor()
-    #Show the First and the Last name of the women in a dropdown.
+    #Shows the First and the Last name of the women in a dropdown menu.
     women = cur.execute("""SELECT FirstName, LastName FROM Women""")
     return render_template("index.html", women=women)
+
+@app.route("/search", methods=['GET', 'POST'])
+def searchfor(): #uses the selected WOMAN and renders the wiki page
+    if request.method == 'POST':
+        woman = request.form['woman']
+        #Formating the string which is the output of the value - putting it into a list.
+        women_list = woman.split(',')
+
+        last_name = women_list[1]
+
+        last_name = last_name.replace(')', '')
+
+    
+        #Define which story should be found in the strories_temp template.
+    con = sql.connect("stories.db")
+    cur = con.cursor()
+    story = cur.execute("""SELECT Story FROM Women WHERE LastName = {} """.format(last_name)) 
+    
+    story_again = None
+    for s in story:
+        story_again = str(s[0]) #Removes the ( and '
+    con.commit() 
+    return render_template('search.html', story=story_again, woman=woman)
 
 
 @app.route('/enternew')

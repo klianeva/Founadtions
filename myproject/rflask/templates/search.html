@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unheard Stories</title>
+	<link rel="shortcut icon" href="one_copy.ico">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stle_wiki.css') }}">
+</head>
+<body>
+
+{% block content %}
+
+  	<strong>Name: </strong>{{woman}}
+
+ <div class="story">
+    <p>{{story}}</p>
+</div>
+
+{% endblock %}
+      <h3><a href = "\"> Go back to home page</a></h3>
+   </body>
+</html>
