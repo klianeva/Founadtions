@@ -90,5 +90,4 @@ def addstr():
 
 if __name__ == "__main__":
 
-    app.run(debug=True)
-#,port = 80, address="0.0.0.0"
+    app.run(debug=True,port = 80, address="0.0.0.0")
