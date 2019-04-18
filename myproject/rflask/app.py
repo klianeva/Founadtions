@@ -1,9 +1,11 @@
 import os
-from flask import Flask, render_template, session, request, redirect
+from flask import Flask, render_template, session, request, redirect, flash, \
+    url_for
 import sqlite3 as sql
 
 
 app = Flask(__name__)
+app.secret_key = 'many random bytes' 
 
 @app.route("/")
 def hello(): #landing page
@@ -17,27 +19,33 @@ def hello(): #landing page
 @app.route("/search", methods=['GET', 'POST'])
 def searchfor(): #uses the selected WOMAN and renders the wiki page
     if request.method == 'POST':
-        woman = request.form['woman']
-        #Formating the string which is the output of the value - putting it into a list.
-        women_list = woman.split(',')
+        try:
+            woman = request.form['woman']
+            #Formating the string which is the output of the value - putting it into a list.
+            women_list = woman.split(',')
 
-        first_name = women_list[0]
-        last_name = women_list[1]
+            first_name = women_list[0]
+            last_name = women_list[1]
+            
+
+            last_name = last_name.replace(')', '')
+            first_name =first_name.replace('(', '')
+             
         
-
-        last_name = last_name.replace(')', '')
-        first_name =first_name.replace('(', '')
-         
-    
-        #Define which story should be found in the strories_temp template.
-    con = sql.connect("stories.db")
-    cur = con.cursor()
-    story = cur.execute("""SELECT Story FROM Women WHERE (LastName = {}) AND (FirstName = {}) """.format(last_name, first_name)) 
-    
-    story_again = None
-    for s in story:
-        story_again = str(s[0]) #Removes the ( and '
-    con.commit() 
+            #Define which story should be found in the strories_temp template.
+            with sql.connect("stories.db") as con:
+                cur = con.cursor()
+          
+                cur = con.cursor()
+                story = cur.execute("""SELECT Story FROM Women WHERE (LastName = {}) AND (FirstName = {}) """.format(last_name, first_name)) 
+                
+                story_again = None
+                for s in story:
+                    story_again = str(s[0]) #Removes the ( and '
+                con.commit() 
+        except: #handle the error if the user doesn't select a name
+            flash('Please select a name from the menu')
+            return redirect(url_for('hello'))
     return render_template('search.html', story=story_again, first_name=first_name, last_name=last_name)
 
 
@@ -81,5 +89,6 @@ def addstr():
     con.close()
 
 if __name__ == "__main__":
+
     app.run(debug=True)
 #,port = 80, address="0.0.0.0"
