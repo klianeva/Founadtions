@@ -46,11 +46,24 @@ input{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
 	border-width: 2px;
-	border-color: #264653;
+	border-color: #E9C46A;
 	border-radius: 20px;
+	background-color:#E9C46A;
 }
 
 select option {
   color: #264653;
 }
 
+.new_story_btn{
+	height:40px;
+	margin-top:2%;
+	margin-left:58%;
+	width:8em;
+	background-color: #DA4167;
+	font-family:'Open Sans', sans-serif;
+	font-size:20px;
+	border-width: 2px;
+	border-color: #DA4167;
+	border-radius: 15px;
+}

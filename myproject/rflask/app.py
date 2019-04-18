@@ -21,11 +21,13 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
         #Formating the string which is the output of the value - putting it into a list.
         women_list = woman.split(',')
 
-        last_name = women_list[1]
         first_name = women_list[0]
+        last_name = women_list[1]
+        
 
         last_name = last_name.replace(')', '')
-        first_name =first_name.replace('(', '') 
+        first_name =first_name.replace('(', '')
+         
     
         #Define which story should be found in the strories_temp template.
     con = sql.connect("stories.db")
@@ -36,7 +38,7 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
     for s in story:
         story_again = str(s[0]) #Removes the ( and '
     con.commit() 
-    return render_template('search.html', story=story_again, woman=woman)
+    return render_template('search.html', story=story_again, first_name=first_name, last_name=last_name)
 
 
 @app.route('/enternew')
@@ -74,8 +76,8 @@ def addstr():
                 msg = "Your story has successfully been added. Thank you for your contribution."
         except:
             con.rollback()
-            msg = "There has been an error, damn it"
-    return render_template("done.html", msg= msg)
+            msg = "There has been an error, please fill in the form again"
+    return render_template("done.html", msg=msg)
     con.close()
 
 if __name__ == "__main__":
