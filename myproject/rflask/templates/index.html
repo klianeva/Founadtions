@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt|PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	<title>Women in History</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	
 </head>
 <body>
-	<h2>The women who changed the world <br/> without you noticing</h2>
+	<main class="cd-main-content">
+		<div class="center">
+			<h2>The women who changed the world <br/> without you noticing</h2>		
+		</div>
+	<i class="fas fa-arrow-down"></i>	
+	</main>
+	<div class="bg-image">
+		<h3 class="title">The stories you wish you have <br/> heard before</h3>
 	<form action="{{url_for('searchfor')}}" method="POST">
 		<div class="dropdown-wrapper">
 		<select name="woman"class="dropdown">
@@ -22,5 +32,6 @@
 	<form action="{{url_for('new_story')}}" method="GET">
 	<button class="new_story_btn" >+ add story</button>
 	</form>	
+	</div>
 </body>
 </html>
