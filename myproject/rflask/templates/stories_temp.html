@@ -1,10 +1,10 @@
 <html>
    <head>
-      
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='form_style.css') }}">
    </head>
    <body>
       <form action = "{{ url_for('addstr') }}" method = "POST">
-         <h3 >Information</h3>
+         <h3 >Add a new story</h3>
          First Name<br>
          <input type = "text" name = "FirstName" required /></br>
             
@@ -12,9 +12,9 @@
          <input type = "text" name = "LastName" required /><br>
          
          Story<br>
-         <input type = "text" name = "Story" required /><br>
+         <input type = "text" name = "Story" class="story" required /><br>
 
-         <input type = "submit" value = "submit" /><br>
+         <input class="button" type = "submit" value = "submit" /><br>
       </form>
    </body>
 </html>

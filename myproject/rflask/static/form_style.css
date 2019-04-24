@@ -1,0 +1,21 @@
+input{
+	margin-top: 5%
+	width:8em;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	border-width: 2px;
+	border-color: #E9C46A;
+	background-color:#E9C46A; 
+	border-radius: 5px;
+}
+
+.button{
+	margin-top: 1%
+}
+
+h3{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+	margin-top: 1%;
+	color:#264653;
+}

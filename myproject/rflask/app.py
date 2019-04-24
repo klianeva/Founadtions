@@ -5,7 +5,7 @@ import sqlite3 as sql
 
 
 app = Flask(__name__)
-app.secret_key = 'many random bytes' 
+app.secret_key = 'this is a super random key' 
 
 @app.route("/")
 def hello(): #landing page
@@ -22,13 +22,13 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
         try:
             woman = request.form['woman']
             #Formating the string which is the output of the value - putting it into a list.
-            women_list = woman.split(',')
+            women_list = woman.split(',') 
 
-            first_name = women_list[0]
+            first_name = women_list[0] #fetch the First name
             last_name = women_list[1]
             
 
-            last_name = last_name.replace(')', '')
+            last_name = last_name.replace(')', '') #remove the ' and ()'
             first_name =first_name.replace('(', '')
              
         
@@ -40,7 +40,7 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
                 story = cur.execute("""SELECT Story FROM Women WHERE (LastName = {}) AND (FirstName = {}) """.format(last_name, first_name)) 
                 
                 story_again = None
-                for s in story:
+                for s in story: #retrieve data after executing a SELECT statement
                     story_again = str(s[0]) #Removes the ( and '
                 con.commit() 
         except: #handle the error if the user doesn't select a name
@@ -49,11 +49,11 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
     return render_template('search.html', story=story_again, first_name=first_name, last_name=last_name)
 
 
-@app.route('/enternew')
+@app.route('/enternew') #enter a new story into the database
 def new_story():
    return render_template('stories_temp.html')
 
-@app.route("/addstr", methods = ['POST', 'GET'])
+@app.route("/addstr", methods = ['POST', 'GET'])#actually put the data into the database
 def addstr():
     if request.method == 'POST':
         try:
@@ -83,11 +83,14 @@ def addstr():
                 con.commit()                
                 msg = "Your story has successfully been added. Thank you for your contribution."
         except:
-            con.rollback()
+            con.rollback() #cancel the transaction and roll back all the proposed changes
             msg = "There has been an error, please fill in the form again"
     return render_template("done.html", msg=msg)
     con.close()
 
 if __name__ == "__main__":
 
-    app.run(debug=True,port = 80, address="0.0.0.0")
+    app.run(debug=True)
+    #,port = 80, address="0.0.0.0")
+
+
