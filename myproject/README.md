@@ -40,6 +40,7 @@ flask run
 ```
 
 Built With
+- Python3
 - Flask - The web framework used
 - SQLite - Database
 
