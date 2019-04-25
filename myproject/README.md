@@ -10,56 +10,35 @@ Prerequisites
 
 What things you need to install the software and how to install them
 
-- You need to have a virtual enviorment running on your machine.
 - You will need to install python3 & flask 
 - You may need to install pip and virtualenv as well
-- 
-Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+Starting the server:
 
-Give the example
-And repeat
+git clone git@github.com:klianeva/Foundations.git
+cd myproject
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+cd venv 
+source bin/activate
+cd ..
 
-Running the tests
+cd rflask
+FLASK_APP=app.py
+flask run 
 
-Explain how to run the automated tests for this system
+** in case you want to run the server while still in development add *
+export FLASK_ENV= development
+flask run
 
-Break down into end to end tests
 
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-
-Explain what these tests test and why
-
-Give an example
-Deployment
-
-Add additional notes about how to deploy this on a live system
 
 Built With
-
-Flask - The web framework used
-SQLite - Database
+- Flask - The web framework used
+- SQLite - Database
 
 
 Authors
-
 Viktoria Klianeva
 
-License
 
-
-
-Acknowledgments
-
-Hat tip to anyone whose code was used
-Inspiration
-etc
