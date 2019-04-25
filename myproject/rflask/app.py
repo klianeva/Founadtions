@@ -3,7 +3,6 @@ from flask import Flask, render_template, session, request, redirect, flash, \
     url_for
 import sqlite3 as sql
 
-
 app = Flask(__name__)
 app.secret_key = 'this is a super random key' 
 
@@ -28,9 +27,8 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
             last_name = women_list[1]
             
 
-            last_name = last_name.replace(')', '') #remove the ' and ()'
-            first_name =first_name.replace('(', '')
-             
+            last_name = last_name.replace(')', "") #remove the ' and ()'
+            first_name =first_name.replace('(', "")       
         
             #Define which story should be found in the strories_temp template.
             with sql.connect("stories.db") as con:
@@ -46,7 +44,7 @@ def searchfor(): #uses the selected WOMAN and renders the wiki page
         except: #handle the error if the user doesn't select a name
             flash('Please select a name from the menu')
             return redirect(url_for('hello'))
-    return render_template('search.html', story=story_again, first_name=first_name, last_name=last_name)
+    return render_template('search.html', story=story_again, first_name=first_name.strip("\'"), last_name=last_name.strip("\'\'"))
 
 
 @app.route('/enternew') #enter a new story into the database
@@ -91,6 +89,5 @@ def addstr():
 if __name__ == "__main__":
 
     app.run(debug=True)
-    #,port = 80, address="0.0.0.0")
-
+    #,port = 80, address="0.0.0.0") # I use this if I want to run the app on the google cloud server 
 

@@ -1,9 +1,11 @@
-dropdown-wrapper {
+body{
+  margin:0;
+}
+ropdown-wrapper {
   position: relative;
   display: flex;
   flex-direction: row;
   width: 60%;
- 
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -26,8 +28,9 @@ select::-ms-expand {
 input{
   margin-left:1%;
   width:8em;
+  height:2em;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 1.1rem;
   border-width: 2px;
   border-color: #E9C46A;
   border-radius: 20px;
@@ -37,13 +40,28 @@ input{
 input:hover{
     transform: scale(1.09);
 }
-.fas fa-arrow-down{
-  color: black;
+.arrow{
+  position: absolute;
+  left:50%;
+  top: auto;
+  right: 0%;
+  bottom: 0%;
+  color: #fcf4e1;
+  z-index: 1000;
 }
+
+a{
+  color: #fcf4e1;
+}
+
+a:hover{
+  color:#E9C46A;
+}
+
 .title{
-  padding-top:31%;
+  padding-top:23%;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #264653;
   line-height: 1;

@@ -1,0 +1,37 @@
+body{
+	background-image: url('finish.png');
+	height:100%;
+	width: auto;
+
+}
+
+h2{
+	font-family: 'Open Sans', sans-serif;;
+  	font-size: 36px;
+  	font-weight: 700;
+  	margin-top: 5%;
+  	color:#264653;
+  	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: #fcf4e1;
+}
+button{
+  height:2em;
+  margin-top:2%;
+  width:15em;
+  background-color: #DA4167;
+  font-family:'Open Sans', sans-serif;
+  font-size:20px;
+  border-width: 2px;
+  border-color: #DA4167;
+  border-radius: 15px;
+  transition: transform 0.8s;
+  justify-content: flex-end;
+
+}
+button:hover{
+    transform: scale(1.2);
+}

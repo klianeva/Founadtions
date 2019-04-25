@@ -1,16 +1,79 @@
+body{
+	background-image: linear-gradient(to right top, #e9c46a, #eea559, #ee8455, #e8635b, #da4167);
+}
+form{
+	padding-right:0;
+}
+.form-style{
+	border: solid 3px;
+	border-color: #fcf4e1;
+	border-radius: 20px;
+	margin-top: 5%;
+	margin:8%;
+	text-align: justify;
+	background-color:white;
+
+}
+img{
+	max-width: 50%;
+  	height: auto;
+	margin-top: 5%;
+
+}
+form img, .smth{
+    display:inline-block;
+    vertical-align: top;
+    position: relative;
+
+}
+
 input{
-	margin-top: 5%
-	width:8em;
+	width:200%;
+	box-sizing: border-box;
+ 	resize: vertical;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
+	font-size: 1rem;
 	border-width: 2px;
 	border-color: #E9C46A;
 	background-color:#E9C46A; 
 	border-radius: 5px;
+	margin-left: 13%;
+	margin-top:5%;
+	padding: 0.5%;
+	padding-right: 0.4em;
+	padding-left:0.4em;
+
+}
+
+textarea{
+	width:200%;
+	box-sizing: border-box;
+ 	resize: vertical;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	margin-left: 13%;
+	border-width: 2px;
+	border-color: #E9C46A;
+	background-color:#E9C46A; 
+	border-radius: 5px;
+	padding-left:0.4em;
+	padding-top:0,5%;
+	padding-bottom:0.4em;
+	padding-right: 0.4em;
+	height: 40%;
+	margin-top:5%;
+
 }
 
 .button{
-	margin-top: 1%
+	margin-top: 3%;
+	padding: 0.8%;
+	color:#264653;
+	width:10em;
+	border-radius: 15px;
+}
+label{
+	text-align:
 }
 
 h3{
@@ -18,4 +81,5 @@ h3{
 	font-size: 30px;
 	margin-top: 1%;
 	color:#264653;
+	text-align: center;
 }

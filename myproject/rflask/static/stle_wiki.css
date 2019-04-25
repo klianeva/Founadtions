@@ -1,9 +1,42 @@
 body {
- background: #F5F5F5;
+ background: #fcf4e1;
+}
+
+h2{
+  font-family: "Rock Salt", cursive;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 1%;
+  color:#DA4167;
+  text-align: center;
+}
+
+.more-stories{
+  height:2em;
+  margin-top:2%;
+  margin-left:52%;
+  width:15em;
+  background-color: #DA4167;
+  font-family:'Open Sans', sans-serif;
+  font-size:20px;
+  border-width: 2px;
+  border-color: #DA4167;
+  border-radius: 15px;
+  transition: transform 0.8s;
+  justify-content: center;
+
+}
+.more-stories:hover{
+    transform: scale(1.2);
+}
+
+a{
+  color:#fcf4e1;
+  text-decoration: none;
 }
 
 .story{
-	margin-top:10%;
+	margin-top:5%;
 	margin-left:20%;
 	margin-right:20%;
 	justify-content:center;
